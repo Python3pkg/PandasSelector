@@ -24,8 +24,7 @@ class PandasSelector(BaseEstimator, TransformerMixin):
             missing_columns = set(self.columns) - set(x.columns)
             if len(missing_columns) > 0:
                 missing_columns_ = ','.join(col for col in missing_columns)
-                raise ('Keys are missing in the record: %s' %
-                                   missing_columns_)
+                raise 'Keys are missing in the record: %s'
 
     def transform(self, x):
         # check if x is a pandas DataFrame
